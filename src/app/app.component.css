@@ -1,0 +1,75 @@
+.main-container{
+background-image: url("../assets/bg.webp");
+background-repeat: no-repeat;
+background-size: cover;
+height: 100vh;
+width: 100%;
+display: flex;
+justify-content: center;
+align-items: center;
+overflow: hidden;
+color: aliceblue;
+}
+.title{
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 30px;
+  font-weight: 500;
+  color: aliceblue;
+}
+label{
+  font-size: 20px;
+  font-weight: 500;
+  color: aliceblue;
+  margin-bottom: 2px;
+  margin-top: 3px;
+}
+.glass{
+  height: 450px;
+  width: 400px;
+  background: rgba( 244, 241, 241, 0.5 );
+box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+backdrop-filter: blur( 11px );
+-webkit-backdrop-filter: blur( 11px );
+border-radius: 10px;
+border: 1px solid rgba( 255, 255, 255, 0.18 );
+padding: 25px;
+}
+input[type=number]::-webkit-inner-spin-button,
+        input[type=number]::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+        }
+
+.generated-password{
+  width: 100%;
+  margin:0 auto ;
+  padding: 10px;
+  margin-top: 20px;
+  background: rgba( 244, 241, 241, 0.85 );
+box-shadow: 0 8px 32px 0 rgba(11, 13, 40, 0.37);
+backdrop-filter: blur( 4px );
+-webkit-backdrop-filter: blur( 4px );
+border-radius: 7px;
+border: 1px solid rgba( 255, 255, 255, 0.18 );
+color: black;
+text-align: center;
+font-size: 20px;
+font-family: 'Courier New', Courier, monospace;
+font-weight: 600;
+min-height: 80px;
+word-wrap: break-word;
+}
+.btn
+{
+  background-color: #26262A;
+  outline: none;
+  border: none;
+  font-weight: 600;
+  margin-top: 15px;
+}
+
+.btn:hover{
+  color: #26262A;
+  background-color: white;
+  font-weight: 600;
+}
