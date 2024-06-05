@@ -7,10 +7,10 @@ import { FormsModule } from '@angular/forms';
   standalone: true,
   imports: [RouterOutlet, FormsModule],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'angular-projects';
+  title = 'Password Generator';
   length: number = 8;
   includeAlphabets: boolean = true;
   includeNumbers: boolean = false;
@@ -24,32 +24,49 @@ export class AppComponent {
     const specialChars = '!@#$%^&*()_+~';
     let chars = '';
 
-    if (!this.includeAlphabets && !this.includeNumbers && !this.includeSpecialChars) {
-      chars = alphabets;
-    } else {
-      if (this.includeAlphabets) {
-        chars += alphabets;
-      }
-
-      if (this.includeNumbers) {
-        chars += numbers;
-      }
-
-      if (this.includeSpecialChars) {
-        chars += specialChars;
-      }
+    if (this.includeAlphabets) {
+      chars += alphabets;
     }
 
+    if (this.includeNumbers) {
+      chars += numbers;
+    }
+
+    if (this.includeSpecialChars) {
+      chars += specialChars;
+    }
+
+    if (chars === '') {
+      this.generatedPassword = '';
+      return;
+    }
 
     let password = '';
-    for (let i = 0; i < this.length; i++) {
+
+    // Ensure at least one character from each selected type
+    if (this.includeAlphabets) {
+      password += alphabets.charAt(Math.floor(Math.random() * alphabets.length));
+    }
+
+    if (this.includeNumbers) {
+      password += numbers.charAt(Math.floor(Math.random() * numbers.length));
+    }
+
+    if (this.includeSpecialChars) {
+      password += specialChars.charAt(Math.floor(Math.random() * specialChars.length));
+    }
+
+    // Generate the rest of the password
+    for (let i = password.length; i < this.length; i++) {
       const randomIndex = Math.floor(Math.random() * chars.length);
       password += chars.charAt(randomIndex);
     }
 
-    this.generatedPassword = password;
+    // Shuffle the password to avoid predictable patterns
+    this.generatedPassword = password.split('').sort(() => Math.random() - 0.5).join('');
   }
-    toggleButtonDisabled(): void {
-      this.isButtonDisabled = (this.length < 8 || this.length > 15);
+
+  toggleButtonDisabled(): void {
+    this.isButtonDisabled = (this.length < 8 || this.length > 15);
   }
 }
