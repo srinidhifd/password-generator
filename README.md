@@ -1,7 +1,12 @@
 # Password Generator
 
-## This Project is hosted on [link](https://password-generators-sk.netlify.app/)
+## This Project is hosted on [Live Link](https://password-generators-sk.netlify.app/)
 ## This Project is Built Using Angular 17 and Bootstrap 5
+## Steps to clone and run this project :
+### 1.Clone this repo - "git clone https://github.com/srinidhifd/password-generator.git"
+### 2.Change directory to root folder - "cd foldername" 
+### 3.Now install dependencies - "npm install "
+### 4.Now to see this project on localhost - "ng serve -o"
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.7.
 
